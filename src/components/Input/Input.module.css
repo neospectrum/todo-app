@@ -1,0 +1,16 @@
+form .input {
+    width: 100%;
+    
+    font-size: 30px;
+    outline: none;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    padding: 15px 10px 15px 70px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input:focus {
+    outline: 2px solid #2D5CFE;
+}

@@ -1,0 +1,31 @@
+.taskControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.controls {
+    user-select: none;
+    width: 100%;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+}
+.controls li {
+    font-weight: 500;
+    cursor: pointer;
+}
+.clear {
+    padding: 15px 10px;
+    background:  linear-gradient(135deg, #4AB1FF, #2D5CFE);
+    color: white;
+    border-radius: 5px;
+}   
+input[type=radio] {
+    display: none;
+}
+input:checked + label {
+    color: #4AB1FF;
+}

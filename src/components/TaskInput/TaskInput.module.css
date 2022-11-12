@@ -1,0 +1,12 @@
+.taskInput {
+    max-height: 70px;
+    border-radius: 10px;
+    padding: 0px 25px;
+    position: relative;
+}
+.taskInput img {
+    width: 35px;
+    position: absolute;
+    top: 17px;
+    left: 40px;
+}

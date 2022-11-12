@@ -1,0 +1,132 @@
+.task {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    cursor: default;
+    user-select: none;
+}
+
+.taskContent {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+.taskContent span {
+    padding: 2px 0;
+    position: relative;
+    overflow: hidden;
+    max-width: 340px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.taskContent span::before { 
+    content: '';
+    width: 100%;
+    position: absolute;
+    background-color: rgb(26, 207, 9);
+    height: 2px;
+    top: 17px;
+    left: -100%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+}
+.task.active span::before {
+    left: 0;
+}
+
+.checkbox {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.checkbox::before {
+    content: '✓';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    top: 0;
+    left: 30px;
+    background-color: rgb(26, 207, 9);
+    transition: all 0.3s linear 0s;
+    border-radius: 5px;
+}
+.checkbox::after {
+    content: '✗';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    top: 0;
+    left: 0;
+    background-color: rgb(233, 46, 46);
+    transition: all 0.3s linear 0s;
+    border-radius: 5px;
+}
+
+.checkbox.active::before {
+    transition: all 0.3s linear 0s;
+    left: 0;
+    transform: scale(1.2);
+}
+.checkbox.active::after {
+    left: -30px;
+}
+
+.settings {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.settingsIcon::before {
+    content: '•••';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settingsMenu {
+    padding: 5px 0;
+    background-color: white;
+    box-shadow: 0 0 2px black;
+    border-radius: 8px;
+    position: absolute;
+    left: 0px;
+    top: -100px;
+    transition: all 0.2s ease 0s;
+    transform: scale(0);
+    z-index: 11;
+}
+.settingsMenu li{
+    padding: 10px 5px;
+    transition: all 0.18s ease 0s;
+}
+.settingsMenu li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.settings.active::before {
+    display: none;
+}
+
+.settingsMenu.active {
+    top: 0;
+    left: -100px;
+    transform: scale(1);
+}
